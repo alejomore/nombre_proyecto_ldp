@@ -84,6 +84,12 @@
                         <td>{{$proyecto->titulo}}</td>
                         <td>{{$proyecto->descripcion}}</td>
                         <td>{{$proyecto->created_at}}</td>
+                        <td><form action="{{ route('project.destroy', $proyecto->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

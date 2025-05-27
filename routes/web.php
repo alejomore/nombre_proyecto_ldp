@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::delete('/project/{id}', [ProyectoController::class, 'destroy'])->name('project.destroy');
+
 Route::resource("project",ProyectoController::class);
